@@ -5,6 +5,7 @@ var hbs = require("hbs");
 
 var app = express();
 
+const port = process.env.PORT || 3000;
 app.set("view engine", "hbs");
 app.use(express.static(__dirname + "/Express/public"));
 hbs.registerPartials(__dirname + "/views/partials");
@@ -27,4 +28,4 @@ app.get("/", (req, res) => {
     });
 });
 
-app.listen(3000);
+app.listen(port);
